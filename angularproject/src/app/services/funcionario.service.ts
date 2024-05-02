@@ -14,6 +14,16 @@ export class FuncionarioService {
 
   constructor(private http: HttpClient) { }
 
+  EditarFuncionario(funcionario: Funcionario): Observable<Response<Funcionario[]>> {
+    return this.http.put<Response<Funcionario[]>>(`${this.apiUrl}`, funcionario);
+  }
+
+
+  GetFuncionario(id: number) : Observable<Response<Funcionario>>{
+    return this.http.get<Response<Funcionario>>(`${this.apiUrl}/${id}`);
+  }
+
+
   GetFuncionarios(): Observable<Response<Funcionario[]>>{
     return this.http.get<Response<Funcionario[]>>(this.apiUrl);
   }
@@ -21,5 +31,7 @@ export class FuncionarioService {
   createFuncionario(funcionario: Funcionario) : Observable<Response<Funcionario[]>>{
     return this.http.post<Response<Funcionario[]>>(`${this.apiUrl}`, funcionario);
   }
+
+
 
 }
