@@ -1479,11 +1479,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/IEC/ilailsonrocha/Vídeos/DOTNETAPI/ApiDotNetAngular/BackDOT.csproj",
+      "projectUniqueName": "/home/IEC/ilailsonrocha/Dev/ApiAngularDotnet/ApiDotNetAngular/BackDOT.csproj",
       "projectName": "BackDOT",
-      "projectPath": "/home/IEC/ilailsonrocha/Vídeos/DOTNETAPI/ApiDotNetAngular/BackDOT.csproj",
+      "projectPath": "/home/IEC/ilailsonrocha/Dev/ApiAngularDotnet/ApiDotNetAngular/BackDOT.csproj",
       "packagesPath": "/home/IEC/ilailsonrocha/.nuget/packages/",
-      "outputPath": "/home/IEC/ilailsonrocha/Vídeos/DOTNETAPI/ApiDotNetAngular/obj/",
+      "outputPath": "/home/IEC/ilailsonrocha/Dev/ApiAngularDotnet/ApiDotNetAngular/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/IEC/ilailsonrocha/.nuget/NuGet/NuGet.Config"
@@ -1558,7 +1558,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.103/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.110/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

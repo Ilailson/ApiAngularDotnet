@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BackDOT.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240426123133_DBcreation")]
-    partial class DBcreation
+    [Migration("20241129113404_inicial")]
+    partial class inicial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

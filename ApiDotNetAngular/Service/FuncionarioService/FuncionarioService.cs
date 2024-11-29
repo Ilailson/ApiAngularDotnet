@@ -10,7 +10,9 @@ namespace BackDOT.Service.FuncionarioService
             public FuncionarioService(ApplicationDbContext context)
             {
                 _context = context;
+
             }
+
 
             public async Task<ServiceResponse<List<FuncionarioModel>>> CreateFuncionario(FuncionarioModel novoFuncionario)
             {
@@ -28,13 +30,17 @@ namespace BackDOT.Service.FuncionarioService
                     }
 
                     novoFuncionario.DataDeCriacao = DateTime.Now.ToLocalTime();
+                
                     novoFuncionario.DataDeAlteracao = DateTime.Now.ToLocalTime();
+                
 
                     _context.Add(novoFuncionario);
+                    
                     await _context.SaveChangesAsync();
 
                     serviceResponse.Dados = _context.Funcionarios.ToList();
 
+            
 
                 }catch (Exception ex)
                 {
@@ -43,6 +49,8 @@ namespace BackDOT.Service.FuncionarioService
                 }
 
                 return serviceResponse;
+
+            
             }
 
             public async Task<ServiceResponse<List<FuncionarioModel>>> DeleteFuncionario(int id)
@@ -53,6 +61,10 @@ namespace BackDOT.Service.FuncionarioService
                 {
                     FuncionarioModel funcionario = _context.Funcionarios.FirstOrDefault(x => x.Id == id);
 
+                    Console.WriteLine("======================funcionario==========================\n" 
+                    + funcionario.Id + 
+                    "\n=============================================================================");
+
                     if (funcionario == null)
                     {
                         serviceResponse.Dados = null;
@@ -62,12 +74,15 @@ namespace BackDOT.Service.FuncionarioService
                         return serviceResponse;
                     }
 
-
                     _context.Funcionarios.Remove(funcionario);
                     await _context.SaveChangesAsync();
 
 
                     serviceResponse.Dados = _context.Funcionarios.ToList();
+
+                    Console.WriteLine("======================serviceResponse==========================\n" 
+                    + serviceResponse.Dados + 
+                    "\n=============================================================================");
 
                 }
                 catch(Exception ex)
@@ -150,6 +165,10 @@ namespace BackDOT.Service.FuncionarioService
                     funcionario.Ativo = false;
                     funcionario.DataDeAlteracao = DateTime.Now.ToLocalTime();
 
+                    Console.WriteLine("======================funcionarioAlterado=========================\n" 
+                    + funcionario+ 
+                    "\n=============================================================================");
+
                     _context.Funcionarios.Update(funcionario);
                     await _context.SaveChangesAsync();
 
@@ -169,6 +188,7 @@ namespace BackDOT.Service.FuncionarioService
             {
                 ServiceResponse<List<FuncionarioModel>> serviceResponse = new ServiceResponse<List<FuncionarioModel>>();
 
+
                 try
                 {
                     FuncionarioModel funcionario = _context.Funcionarios.AsNoTracking().FirstOrDefault(x => x.Id == editadoFuncionario.Id);
@@ -180,6 +200,10 @@ namespace BackDOT.Service.FuncionarioService
                         serviceResponse.Sucesso = false;
                     }
 
+                    Console.WriteLine("======================funcionario==========================\n" 
+                    + funcionario.ToString() + 
+                    "\n=============================================================================");
+
 
                     funcionario.DataDeAlteracao = DateTime.Now.ToLocalTime();
 
@@ -187,6 +211,10 @@ namespace BackDOT.Service.FuncionarioService
                     await _context.SaveChangesAsync();
 
                     serviceResponse.Dados = _context.Funcionarios.ToList();
+
+                    Console.WriteLine("======================serviceResponse==========================\n" 
+                    + serviceResponse + 
+                    "\n=============================================================================");
 
                 }
                 catch(Exception ex)

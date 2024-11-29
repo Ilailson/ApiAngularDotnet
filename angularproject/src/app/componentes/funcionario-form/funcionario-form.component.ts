@@ -11,20 +11,27 @@ import { Funcionario } from 'src/app/models/Funcionarios';
 
 export class FuncionarioFormComponent implements OnInit {
   //mandar fora daqui - funcionario
-  @Output() onSubmit = new EventEmitter<Funcionario>(); 
+  @Output() onSubmit = new EventEmitter<Funcionario>(); //mandando para fora um funcionario
   @Input() btnAcao!: string;
   @Input() btnTitulo!: string;
-  @Input() dadosFuncionario: Funcionario | null = null;
+  @Input() dadosFuncionario: Funcionario | null = null; //ira receber um funcionário ou talvés null.
 
 
   funcionarioForm!: FormGroup;
 
 
   constructor() {
-    
-    
+
+
   }
 
+  /**
+   * codição para quando for criar um novo funcionario e para quando for editar.
+   * Caso se um novo funcionário o formulário fica vazio
+   * se
+   * Vem preenchido
+   *
+   */
   ngOnInit(): void {
     this.funcionarioForm = new FormGroup({
       id: new FormControl(this.dadosFuncionario? this.dadosFuncionario.id: 0),
@@ -39,10 +46,11 @@ export class FuncionarioFormComponent implements OnInit {
   }
 
   submit(){
-    console.log(this.funcionarioForm.value)
+    // console.log(this.funcionarioForm)
+    // console.log(this.funcionarioForm.value)
 
     // mandar componente - cadastro
-    this.onSubmit.emit(this.funcionarioForm.value); 
+    this.onSubmit.emit(this.funcionarioForm.value);
   }
 
 

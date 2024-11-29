@@ -11,9 +11,9 @@ export class HomeComponent implements OnInit {
 
     funcionarios: Funcionario [] = [];
     funcionariosGeral: Funcionario [] = [];
-    
+
     constructor( private funcionarioService: FuncionarioService){}
-    
+
     ngOnInit(): void {
       this.funcionarioService.GetFuncionarios().subscribe(data => {
       const dados = data.dados;
@@ -26,12 +26,18 @@ export class HomeComponent implements OnInit {
         this.funcionariosGeral = data.dados;
       });
     }
-    
+
 
     // buscar campo imput
     search(event: Event){
+      console.log('',event)
       const target = event.target as HTMLInputElement;
+      console.log('',target)
+
       const value = target.value.toLowerCase();
+      console.log('',value)
+
+      //filtrar
       this.funcionarios = this.funcionariosGeral.filter(funcionario => {
         return funcionario.nome.toLocaleLowerCase().includes(value);
       })

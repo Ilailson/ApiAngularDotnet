@@ -9,7 +9,7 @@ import { FuncionarioService } from 'src/app/services/funcionario.service';
   styleUrls: ['./cadastro.component.css']
 })
 export class CadastroComponent {
-  btnAcao = "Cadasatrar!"
+  btnAcao = "Cadastrar!"
   btnTitulo = "Cadastrar Funcionário"
 
   /**

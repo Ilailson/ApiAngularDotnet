@@ -1,4 +1,8 @@
 <div>
-    <!-- recebendo o funcionario do funcionario-form -->
-    <app-funcionario-form [btnAcao]="btnAcao" [btnTitulo]="btnTitulo" (onSubmit)="createFuncionario($event)"></app-funcionario-form>
+    <!-- recebendo o funcionario do funcionario-form. Atravé do onsubmit
+      -->
+    <app-funcionario-form
+    (onSubmit)="createFuncionario($event)"
+    [btnAcao]="btnAcao"
+    [btnTitulo]="btnTitulo"></app-funcionario-form>
 </div>

@@ -13,12 +13,14 @@ namespace BackDOT.Controllers
         public FuncionarioController(IFuncionarioInterface funcionarioInterface)
         {
             _funcionarioInterface = funcionarioInterface;
+
         }
 
         [HttpGet]
         public async Task<ActionResult<ServiceResponse<List<FuncionarioModel>>>> GetFuncionarios()
         {
             return Ok( await _funcionarioInterface.GetFuncionarios());
+
         }
 
         [HttpGet("{id}")]
@@ -33,6 +35,7 @@ namespace BackDOT.Controllers
         public async Task<ActionResult<ServiceResponse<List<FuncionarioModel>>>> CreateFuncionario(FuncionarioModel novoFuncionario)
         {
             return Ok(await _funcionarioInterface.CreateFuncionario(novoFuncionario));
+            
         }
 
         [HttpPut]

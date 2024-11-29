@@ -1,3 +1,4 @@
+<!-- buscar funcionario dentro da tabela-->
 <div class="funcionario-box">
     <button routerLink="/cadastro"> Cadastrar novo funcionário</button>
     <div class="input-box">
@@ -23,10 +24,12 @@
                 <div *ngIf="item.ativo == true; else inativo ">
                     <img src="assets/images/Ativo.png"  style="height: 20px; width: 20px;">
                 </div>
+
                 <ng-template #inativo>
                     <img src="assets/images/Inativo.png"  style="height: 20px; width: 20px;">
                 </ng-template>
             </td>
+
             <td>{{ item.nome }}</td>
             <td>{{ item.sobrenome }}</td>
             <td>{{ item.departamento }} </td>

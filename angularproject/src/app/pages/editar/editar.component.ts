@@ -13,9 +13,9 @@ export class EditarComponent implements OnInit{
   btnTitulo: string = 'Editar Funcionário'
 
   //! vai ser recebido de qualquer forma
-  funcionario!: Funcionario; 
+  funcionario!: Funcionario;
 
-  // router pegar id na rota
+  // router pegar id na rota ActivatedRoute
   constructor(
     private funcionarioService: FuncionarioService,
     private route: ActivatedRoute,
@@ -24,9 +24,9 @@ export class EditarComponent implements OnInit{
 
 
   ngOnInit(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    
-    console.log(1)
+
+    const id = Number(this.route.snapshot.paramMap.get('id'));//pegar id. transformar em number
+
     this.funcionarioService.GetFuncionario(id).subscribe(
       (data)=>{
         this.funcionario = data.dados;
