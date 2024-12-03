@@ -20,6 +20,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ExcluirComponent } from './componentes/excluir/excluir.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import {MatTableModule} from '@angular/material/table';
     CadastroComponent,
     FuncionarioFormComponent,
     EditarComponent,
-    DetalhesComponent
+    DetalhesComponent,
+    ExcluirComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import {MatTableModule} from '@angular/material/table';
     MatCardModule,
     MatInputModule,
     MatSelectModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -56,7 +56,10 @@
         <ng-container matColumnDef="Excluir">
             <th mat-header-cell *matHeaderCellDef></th>
             <td mat-cell *matCellDef="let funcionario">
-                <button mat-raised-button color="warn">Excluir</button>
+                <button mat-raised-button color="warn"
+                (click)="OpenDialog(funcionario.id)">
+                    Excluir
+                </button>
             </td>
         </ng-container>
 
