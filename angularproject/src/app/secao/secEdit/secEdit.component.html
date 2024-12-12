@@ -1,0 +1,11 @@
+<mat-card>
+<div *ngIf="secao">
+  <app-secao-form
+  [btnAcao]="btnAcao"
+  [btnTitulo]="btnTitulo"
+  [dadosSecao]="secao"
+  (onSubmit)="editarSecao($event)"
+  >
+</app-secao-form>
+</div>
+</mat-card>

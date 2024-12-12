@@ -24,19 +24,20 @@ export class ExcluirComponent implements OnInit {
 
   ngOnInit(): void {
     this.inputdata = this.data;
-    console.log('O que vêm', this.data);
+    console.log('O que vêm', this.inputdata);
 
     this.funcionarioService.GetFuncionario(this.inputdata.id).subscribe((data) => {
       this.funcionario = data.dados;
-      console.log('', this.funcionario);
+      console.log('Dados do funcionario', this.funcionario);
     });
   }
 
 
   excluir() {
     this.funcionarioService.ExcluirFuncionario(this.inputdata.id).subscribe((data)=> {
+      console.log('Tudo que vai ser excluído',data)
+      window.location.reload();
         this.ref.close();
-        window.location.reload();
     })
     }
 

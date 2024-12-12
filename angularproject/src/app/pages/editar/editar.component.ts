@@ -11,8 +11,6 @@ import { FuncionarioService } from 'src/app/services/funcionario.service';
 export class EditarComponent implements OnInit{
   btnAcao: string = 'Editar'
   btnTitulo: string = 'Editar Funcionário'
-
-  //! vai ser recebido de qualquer forma
   funcionario!: Funcionario;
 
   // router pegar id na rota ActivatedRoute

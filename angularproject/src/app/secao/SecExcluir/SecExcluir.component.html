@@ -1,0 +1,17 @@
+<mat-card>
+  <div *ngIf="secao">
+    <h1 style="text-align: center;">Deseja confirma a exclusão?</h1>
+
+    <div>
+      <h2>Seção:</h2>
+      <p>{{ secao.nome }}</p>
+      <h2> Departamento </h2>
+      <p>{{ secao.departamento }}</p>
+    </div>
+
+    <div>
+      <button mat-raised-button="warn" (click)="excluir()">Confirmar Exclusão</button>
+      <button mat-raised-button (click)="cancelar()">Voltar</button>
+    </div>
+  </div>
+</mat-card>

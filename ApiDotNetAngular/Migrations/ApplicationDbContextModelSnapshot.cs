@@ -19,6 +19,40 @@ namespace BackDOT.Migrations
                 .HasAnnotation("ProductVersion", "7.0.9")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
+            modelBuilder.Entity("ApiDotNetAngular.Models.Secao", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Ativo")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<DateTime>("DataDeAlteracao")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("DataDeCriacao")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("Departamento")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Sobrenome")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("Turno")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Secoes");
+                });
+
             modelBuilder.Entity("BackDOT.Models.FuncionarioModel", b =>
                 {
                     b.Property<int>("Id")

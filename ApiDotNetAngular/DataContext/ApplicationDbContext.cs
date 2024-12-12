@@ -1,3 +1,4 @@
+using ApiDotNetAngular.Models;
 using BackDOT.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,5 +10,6 @@ namespace BackDOT.DataContext
         {  
         }
         public DbSet<FuncionarioModel> Funcionarios { get; set; }
+        public DbSet<Secao> Secoes { get; set; }
     }
 }

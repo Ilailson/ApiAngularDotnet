@@ -1,3 +1,4 @@
+using ApiDotNetAngular.Service;
 using BackDOT.DataContext;
 using BackDOT.Service.FuncionarioService;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IFuncionarioInterface,FuncionarioService>();
+builder.Services.AddScoped<ISecaoInterface,SecaoService>();
+
 builder.Services.AddDbContext<ApplicationDbContext>
     (options => options.UseMySql(
         "server=localhost;initial catalog=teste;uid=root;pwd=123",

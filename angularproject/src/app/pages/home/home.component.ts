@@ -45,7 +45,9 @@ export class HomeComponent implements OnInit {
 
       //filtrar
       this.funcionarios = this.funcionariosGeral.filter(funcionario => {
-        return funcionario.nome.toLocaleLowerCase().includes(value);
+        return funcionario.nome.toLowerCase().includes(value)
+               || funcionario.sobrenome.toLowerCase().includes(value)
+               || funcionario.departamento.toLowerCase().includes(value);
       })
     }
 

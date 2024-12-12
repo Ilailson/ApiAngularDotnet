@@ -1,0 +1,66 @@
+<mat-card>
+  <div>
+      <h1> Detalhes Seção</h1>
+  </div>
+
+  <!-- so redereniza se o funcionario existir -->
+  <div *ngIf="secao">
+      <form >
+          <div class="input_box">
+              <mat-form-field>
+                  <mat-label>Nome:</mat-label>
+                  <input matInput type="text" value="{{ secao.nome }}" disabled>
+              </mat-form-field>
+          </div>
+
+          <div class="input_box">
+              <mat-form-field>
+                  <mat-label>Sobrenome:</mat-label>
+                  <input matInput type="text" value="{{ secao.sobrenome }}" disabled>
+                  </mat-form-field>
+          </div>
+
+          <div class="input_box">
+              <mat-form-field>
+              <mat-label>Departamento:</mat-label>
+              <input matInput type="text" value="{{ secao.departamento }}" disabled>
+              </mat-form-field>
+          </div>
+
+          <div class="input_box">
+              <mat-form-field>
+              <mat-label>Turno:</mat-label>
+              <input matInput type="text" value="{{ secao.turno }}" disabled>
+              </mat-form-field>
+          </div>
+
+          <div class="input_box">
+              <mat-form-field>
+              <mat-label>Situação:</mat-label>
+              <!-- true = Ativo / false = Inativo -->
+              <input matInput type="text" value="{{ secao.ativo == true? 'Ativo' : 'Inativo' }}" disabled>
+              </mat-form-field>
+          </div>
+
+          <div class="input_box">
+              <mat-form-field>
+              <mat-label>Data de Criação:</mat-label>
+              <input matInput type="text" value="{{ secao.dataDeCriacao }}" disabled>
+              </mat-form-field>
+          </div>
+
+          <div class="input_box">
+              <mat-form-field>
+              <mat-label>Data de Alteração:</mat-label>
+              <input matInput type="text" value="{{ secao.dataDeAlteracao }}" disabled>
+              </mat-form-field>
+          </div>
+
+          <div class="btn-box">
+              <button *ngIf="secao.ativo" mat-raised-button color="warn" (click)="InativaSecao()">Inativar Usuário</button>
+              <button *ngIf="!secao.ativo" mat-raised-button color="primary" (click)="AtivarSecao()">Ativar Usuário</button>
+              <button routerLink='/secao' mat-raised-button >Voltar</button>
+          </div>
+      </form>
+  </div>
+</mat-card>

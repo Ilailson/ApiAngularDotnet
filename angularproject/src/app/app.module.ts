@@ -22,6 +22,12 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ExcluirComponent } from './componentes/excluir/excluir.component';
+import { SecaoComponent } from './secao/secao.component';
+import { SecaoFormComponent } from './componentes/secao-form/secao-form.component';
+import { SecCadComponent } from './secao/secCad/secCad.component';
+import { SecEditComponent } from './secao/secEdit/secEdit.component';
+import { SecDetalhesComponent } from './secao/secDetalhes/secDetalhes.component';
+import { SecExcluirComponent } from './secao/SecExcluir/SecExcluir.component';
 
 @NgModule({
   declarations: [
@@ -31,8 +37,14 @@ import { ExcluirComponent } from './componentes/excluir/excluir.component';
     FuncionarioFormComponent,
     EditarComponent,
     DetalhesComponent,
-    ExcluirComponent
-  ],
+    ExcluirComponent,
+    SecaoComponent,
+    SecaoFormComponent,
+    SecCadComponent,
+    SecEditComponent,
+    SecDetalhesComponent,
+    SecExcluirComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -45,7 +57,8 @@ import { ExcluirComponent } from './componentes/excluir/excluir.component';
     MatInputModule,
     MatSelectModule,
     MatTableModule,
-    MatDialogModule
+    MatDialogModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

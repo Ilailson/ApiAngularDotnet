@@ -1,6 +1,7 @@
 <!-- só vai carregar o formulario se o funcionario existir -->
 <div *ngIf="funcionario">
-    <app-funcionario-form [btnAcao]="btnAcao"
+    <app-funcionario-form
+    [btnAcao]="btnAcao"
     [btnTitulo]="btnTitulo"
     [dadosFuncionario]="funcionario"
     (onSubmit)="editarFuncionario($event)"
